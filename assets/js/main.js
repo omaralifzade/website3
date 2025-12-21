@@ -1,12 +1,14 @@
-/* Main JS for:
-   1) Mobile navbar toggle
-   2) Projects accordion expand/collapse
-*/
+// Main JS
+// 1) Mobile navbar toggle
+// 2) Project card expand/collapse
+// 3) Lightbox modal
+// 4) Dark/Light theme toggle
 
-// Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
-  setupAccordion();
+  setupProjectToggle();
+  setupLightbox();
+  setupThemeToggle();
 });
 
 function setupMobileMenu() {
@@ -19,7 +21,6 @@ function setupMobileMenu() {
     menuBtn.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Close menu when clicking outside
   document.addEventListener("click", (e) => {
     const target = e.target;
     if (!(target instanceof Element)) return;
@@ -31,35 +32,6 @@ function setupMobileMenu() {
     }
   });
 }
-
-function setupAccordion() {
-  const accordion = document.querySelector("[data-accordion]");
-  if (!accordion) return;
-
-  const items = accordion.querySelectorAll(".accordion-item");
-  items.forEach((item) => {
-    const header = item.querySelector(".accordion-header");
-    const panel = item.querySelector(".accordion-panel");
-    const icon = item.querySelector(".accordion-icon");
-
-    if (!header || !panel || !icon) return;
-
-    header.addEventListener("click", () => {
-      const isExpanded = header.getAttribute("aria-expanded") === "true";
-
-      // Toggle current item
-      header.setAttribute("aria-expanded", String(!isExpanded));
-      panel.hidden = isExpanded;
-      icon.textContent = isExpanded ? "+" : "–";
-    });
-  });
-}
-
-// ===== Projects: toggle + lightbox =====
-document.addEventListener("DOMContentLoaded", () => {
-  setupProjectToggle();
-  setupLightbox();
-});
 
 function setupProjectToggle() {
   const card = document.querySelector("[data-project]");
@@ -97,10 +69,37 @@ function setupLightbox() {
   };
 
   openBtn.addEventListener("click", open);
-
   closeButtons.forEach((btn) => btn.addEventListener("click", close));
 
   document.addEventListener("keydown", (e) => {
     if (!lightbox.hidden && e.key === "Escape") close();
   });
+}
+
+function setupThemeToggle() {
+  const btn = document.querySelector("[data-theme-toggle]");
+  const root = document.documentElement;
+
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = saved || (prefersDark ? "dark" : "light");
+
+  applyTheme(initialTheme);
+
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("theme", next);
+  });
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    if (btn) {
+      btn.textContent = theme === "dark" ? "☀️" : "🌙";
+      btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+  }
 }

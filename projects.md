@@ -6,7 +6,7 @@ title: Projects
 <section class="section">
   <h1 class="page-title">Projects</h1>
   <p class="page-subtitle">
-    One highlighted project with a cleaner, interactive view.
+    One highlighted project (click to expand details and zoom the image).
   </p>
 
   <article class="project-card" data-project>
@@ -41,6 +41,7 @@ title: Projects
         >
           Watch on YouTube
         </a>
+ HEAD
 
         <!-- Optional: add your repo link here later -->
         <a
@@ -51,6 +52,7 @@ title: Projects
         >
           Project Repo (optional)
         </a>
+ e3ffccd (Final enhancements)
       </div>
     </div>
 
@@ -65,7 +67,7 @@ title: Projects
           </ul>
 
           <div class="note">
-            Tip: You can add more gates (XOR/NOR), tools used, and team roles.
+            Add your team info, tools, and extra gates (XOR/NOR) if you want.
           </div>
         </div>
 
@@ -91,10 +93,10 @@ title: Projects
     </div>
   </article>
 
-  <!-- Lightbox / Modal -->
   <div class="lightbox" data-lightbox hidden>
     <div class="lightbox-backdrop" data-close-lightbox></div>
 
+HEAD
     <div
       class="lightbox-dialog"
       role="dialog"
@@ -104,6 +106,10 @@ title: Projects
       <button class="lightbox-close" type="button" data-close-lightbox aria-label="Close">
         ✕
       </button>
+
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Project image preview">
+      <button class="lightbox-close" type="button" data-close-lightbox aria-label="Close">✕</button>
+ e3ffccd (Final enhancements)
 
       <img
         class="lightbox-img"
