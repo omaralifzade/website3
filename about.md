@@ -29,9 +29,7 @@ title: About
         <li><a href="https://github.com/omaralifzade/website3" target="_blank" rel="noopener noreferrer">Website Repository</a></li>
       </ul>
 
-      <div class="note">
-        This portfolio was built with Jekyll layouts/includes to keep the code modular.
-      </div>
+      
     </div>
   </div>
 </section>

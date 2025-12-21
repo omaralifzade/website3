@@ -27,7 +27,7 @@ title: Home
 
     <div class="photo-card">
       <img class="profile-photo" src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Profile photo" />
-      <p class="photo-hint">Add/replace your profile picture in <strong>assets/images/profile.jpeg</strong>.</p>
+      <p class="photo-hint"></p>
     </div>
   </div>
 </section>

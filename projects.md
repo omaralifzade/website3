@@ -6,7 +6,7 @@ title: Projects
 <section class="section">
   <h1 class="page-title">Projects</h1>
   <p class="page-subtitle">
-    One highlighted project (click to expand details and zoom the image).
+    
   </p>
 
   <article class="project-card" data-project>
@@ -66,9 +66,7 @@ title: Projects
             <li>Connected physical implementation to logic design concepts.</li>
           </ul>
 
-          <div class="note">
-            Add your team info, tools, and extra gates (XOR/NOR) if you want.
-          </div>
+          
         </div>
 
         <figure class="project-figure card">
