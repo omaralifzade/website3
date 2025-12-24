@@ -41,18 +41,7 @@ title: Projects
         >
           Watch on YouTube
         </a>
- HEAD
-
-        <!-- Optional: add your repo link here later -->
-        <a
-          class="btn btn-ghost"
-          href="#"
-          aria-disabled="true"
-          tabindex="-1"
-        >
-          Project Repo (optional)
-        </a>
- e3ffccd (Final enhancements)
+ 
       </div>
     </div>
 
@@ -94,7 +83,7 @@ title: Projects
   <div class="lightbox" data-lightbox hidden>
     <div class="lightbox-backdrop" data-close-lightbox></div>
 
-HEAD
+
     <div
       class="lightbox-dialog"
       role="dialog"
@@ -107,7 +96,7 @@ HEAD
 
     <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Project image preview">
       <button class="lightbox-close" type="button" data-close-lightbox aria-label="Close">✕</button>
- e3ffccd (Final enhancements)
+ 
 
       <img
         class="lightbox-img"
